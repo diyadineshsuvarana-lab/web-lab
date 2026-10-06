@@ -1,0 +1,101 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <title>Simple Calculator</title> 
+    <style> 
+        body { 
+            font-family: Arial, sans-serif; 
+            background-color: #f0f2f5; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+        } 
+        .calculator { 
+            background-color: white; 
+            padding: 25px; 
+            border-radius: 15px; 
+            box-shadow: 0 0 10px gray; 
+            width: 300px; 
+            text-align: center; 
+        } 
+        h2 { 
+            color: #333; 
+            margin-bottom: 20px; 
+        } 
+        input, select, button { 
+            padding: 10px; 
+            margin: 8px; 
+ width: 80%; 
+            border: 1px solid #ccc; 
+            border-radius: 8px; 
+            font-size: 16px; 
+        } 
+        button { 
+            width: 85%; 
+            background-color: #0078d7; 
+            color: white; 
+            border: none; 
+            cursor: pointer; 
+        } 
+        button:hover { 
+            background-color: #005fa3; 
+        } 
+        #result { 
+            margin-top: 15px; 
+            font-weight: bold; 
+            color: green; 
+        } 
+    </style> 
+</head> 
+<body> 
+    <div class="calculator"> 
+        <h2>Simple Calculator</h2> 
+        <input type="number" id="firstNumber" placeholder="Enter first number"><br> 
+        <select id="operator"> 
+            <option value="+">Addition (+)</option> 
+            <option value="-">Subtraction (-)</option> 
+            <option value="*">Multiplication (*)</option> 
+            <option value="/">Division (/)</option> 
+        </select><br> 
+        <input type="number" id="secondNumber" placeholder="Enter second 
+number"><br> 
+        <button onclick="calculate()">Calculate</button> 
+        <div id="result"></div> 
+    </div> 
+ 
+    <script> 
+        function calculate() { 
+            let firstNumber = 
+parseFloat(document.getElementById("firstNumber").value); 
+            let secondNumber = 
+parseFloat(document.getElementById("secondNumber").value); 
+            let operator = document.getElementById("operator").value; 
+            let result = ""; 
+ 
+            if (isNaN(firstNumber) || isNaN(secondNumber)) {
+                 result = "Please enter valid numbers."; 
+            } else { 
+                if (operator === "+") { 
+                    result = "Result: " + (firstNumber + secondNumber); 
+                } else if (operator === "-") { 
+                    result = "Result: " + (firstNumber - secondNumber); 
+                } else if (operator === "*") { 
+                    result = "Result: " + (firstNumber * secondNumber); 
+                } else if (operator === "/") { 
+                    if (secondNumber === 0) { 
+                        result = "Division by zero not possible."; 
+                    } else { 
+                        result = "Result: " + (firstNumber / secondNumber); 
+                    } 
+                } else { 
+                    result = "Invalid operator."; 
+                } 
+            } 
+ 
+            document.getElementById("result").innerHTML = result; 
+        } 
+    </script> 
+</body> 
+</html> 
+ 
