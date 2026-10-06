@@ -1,0 +1,134 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+<title>Registration Form Validation</title> 
+
+<link rel="stylesheet" href="style5.css"> 
+
+<style> 
+body { 
+font-family: Arial, sans-serif; 
+background-color: #f3f6fa; 
+margin: 40px; 
+} 
+h2 { 
+color: #004085; 
+text-align: center; 
+    } 
+ 
+    form { 
+        background-color: white; 
+        border-radius: 10px; 
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+        padding: 20px; 
+        width: 400px; 
+        margin: 0 auto; 
+    } 
+ 
+    label { 
+        display: block; 
+        margin-top: 10px; 
+        font-weight: bold; 
+    } 
+ 
+    input[type="text"], input[type="password"], input[type="email"] { 
+        width: 95%; 
+        padding: 8px; 
+        margin-top: 5px; 
+        border-radius: 5px; 
+        border: 1px solid #ccc; 
+    } 
+ 
+    input[type="submit"] { 
+        background-color: #007bff; 
+        color: white; 
+        border: none; 
+        padding: 10px 20px; 
+        border-radius: 5px; 
+        margin-top: 15px; 
+        cursor: pointer; 
+    } 
+ 
+    input[type="submit"]:hover { 
+        background-color: #0056b3; 
+    } 
+ 
+    .error { 
+        color: red; 
+        font-size: 0.9em; 
+    } 
+</style> 
+ 
+<script> 
+
+ 
+function validateForm() { 
+    let name = document.getElementById("fname").value.trim(); 
+    let password = document.getElementById("password").value.trim(); 
+    let email = document.getElementById("email").value.trim(); 
+    let mobile = document.getElementById("mobile").value.trim(); 
+    let valid = true; 
+ 
+    
+    document.getElementById("nameError").innerHTML = ""; 
+    document.getElementById("passError").innerHTML = ""; 
+    document.getElementById("emailError").innerHTML = ""; 
+    document.getElementById("mobileError").innerHTML = ""; 
+ 
+    if (!/^[A-Za-z]+$/.test(name) || name.length < 6) { 
+        document.getElementById("nameError").innerHTML = "Name must contain only 
+alphabets and be at least 6 characters long."; 
+        valid = false; 
+    } 
+ 
+    if (password.length < 6) { 
+        document.getElementById("passError").innerHTML = "Password must be at least 
+6 characters long."; 
+        valid = false; 
+    } 
+  
+    let emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
+    if (!emailPattern.test(email)) { 
+        document.getElementById("emailError").innerHTML = "Please enter a valid 
+email (e.g., name@domain.com)."; 
+        valid = false; 
+    } 
+    if (!/^\d{10}$/.test(mobile)) { 
+        document.getElementById("mobileError").innerHTML = "Mobile number must 
+contain exactly 10 digits."; 
+        valid = false; 
+    } 
+ 
+    return valid; 
+} 
+</script> 
+</head> 
+ 
+<body> 
+ 
+<h2 style="text-decoration: underline; color: darkblue;">Registration Page</h2>
+ 
+<form onsubmit="return validateForm()"> 
+    <label for="fname">First Name:</label> 
+    <input type="text" id="fname" placeholder="Enter your name"> 
+    <div id="nameError" class="error"></div> 
+ 
+    <label for="password">Password:</label> 
+    <input type="password" id="password" placeholder="Enter your password"> 
+    <div id="passError" class="error"></div> 
+ 
+    <label for="email">E-mail ID:</label> 
+    <input type="email" id="email" placeholder="Enter your email"> 
+    <div id="emailError" class="error"></div> 
+ 
+    <label for="mobile">Mobile Number:</label> 
+    <input type="text" id="mobile" placeholder="Enter 10-digit number"> 
+    <div id="mobileError" class="error"></div> 
+ 
+    <input type="submit" value="Register"> 
+</form> 
+</body> 
+</html> 
+ 
