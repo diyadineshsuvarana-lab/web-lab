@@ -1,0 +1,12 @@
+body { 
+    background: linear-gradient(to right, #cce5ff, #e6f0ff); 
+} 
+ 
+input:focus { 
+    border-color: #007bff; 
+    outline: none; 
+} 
+ 
+form { 
+    border-top: 5px solid #007bff; 
+} 
