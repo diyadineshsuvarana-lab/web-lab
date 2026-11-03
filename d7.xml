@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="4styles.css"?>
+<STUDENTDATA>
+
+    <STUDENT>
+        <USN>USN : 1BY24CS081</USN>
+        <NAME>NAME : DIYA DINESH</NAME>
+        <COLLEGE>COLLEGE : BMSIT</COLLEGE>
+        <BRANCH>BRANCH : CSE</BRANCH>
+        <YEAR>YEAR : 2018</YEAR>
+        <EMAIL>E-MAIL : uturevisionbie@gmail.com</EMAIL>
+    </STUDENT>
+
+    <STUDENT>
+        <USN>USN : 1BY24CS111</USN>
+        <NAME>NAME : LAHITHA</NAME>
+        <COLLEGE>COLLEGE : BMSIT</COLLEGE>
+        <BRANCH>BRANCH : CSE</BRANCH>
+        <YEAR>YEAR : 2018</YEAR>
+        <EMAIL>E-MAIL : Aul@gmail.com</EMAIL>
+    </STUDENT>
+
+    <STUDENT>
+        <USN>USN : 1BY24CS419</USN>
+        <NAME>NAME : SAKSHI</NAME>
+        <COLLEGE>COLLEGE : BMSIT</COLLEGE>
+        <BRANCH>BRANCH : CSE</BRANCH>
+        <YEAR>YEAR : 2018</YEAR>
+        <EMAIL>E-MAIL : punith@gmail.com</EMAIL>
+    </STUDENT>
+
+</STUDENTDATA>
